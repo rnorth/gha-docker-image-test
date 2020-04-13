@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  pull_request: {}
+  push: { branches: [ master ] }
+
+jobs:
+  simple_job:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: List docker images
+        run: |
+          docker images
